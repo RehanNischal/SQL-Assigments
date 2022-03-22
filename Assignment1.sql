@@ -1,29 +1,29 @@
 USE edyoda;
--- create table if not exists SalesPeople (
--- Snum int unsigned auto_increment not null,
--- Sname varchar(20) not null,
--- City varchar(20),
--- Comm int,
--- primary key (Snum)
--- );
--- create table if not exists Customers (
--- Cnum int unsigned auto_increment not null,
--- City varchar(20) not null,
--- Snum int unsigned not null,
--- Cname varchar(20),
--- primary key (Cnum),
--- foreign key (Snum) references SalesPeople(Snum) 
--- );
--- create table if not exists Orders (
--- Onum int unsigned auto_increment not null,
--- Cnum int unsigned not null,
--- Amt float,
--- Odate date,
--- Snum int unsigned not null,
--- primary key (Onum),
--- foreign key (Cnum) references Customers(Cnum),
--- foreign key (Snum) references SalesPeople(Snum)
--- );
+create table if not exists SalesPeople (
+Snum int unsigned auto_increment not null,
+Sname varchar(20) not null,
+City varchar(20),
+Comm int,
+primary key (Snum)
+);
+create table if not exists Customers (
+Cnum int unsigned auto_increment not null,
+City varchar(20) not null,
+Snum int unsigned not null,
+Cname varchar(20),
+primary key (Cnum),
+foreign key (Snum) references SalesPeople(Snum) 
+);
+create table if not exists Orders (
+Onum int unsigned auto_increment not null,
+Cnum int unsigned not null,
+Amt float,
+Odate date,
+Snum int unsigned not null,
+primary key (Onum),
+foreign key (Cnum) references Customers(Cnum),
+foreign key (Snum) references SalesPeople(Snum)
+);
 
 
 
